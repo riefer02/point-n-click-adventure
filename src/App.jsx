@@ -1,45 +1,27 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from "react";
+import { useSelector } from "react-redux";
+
+import Loader from "./components/utils/Loader";
+import Button from "./components/utils/Button";
+import PrimaryDisplay from "./components/PrimaryDisplay";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isLoading = useSelector(({ load }) => load.loading);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + Tailwind + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <div className="container h-screen flex flex-col justify-center items-center mx-auto">
+        <div className="bg-indigo-200 w-full h-60">
+          <PrimaryDisplay />
+        </div>
+        <div className="w-full">{isLoading && <Loader />}</div>
+        <div className="my-10">
+          <Button />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
