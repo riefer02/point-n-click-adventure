@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const viewSlice = createSlice({
   name: "view",
   initialState: {
-    views: ["1: home", "2: library", " 3: dungeon", "4: cave"],
+    views: ["1: home", "2: library", "3: dungeon", "4: cave"],
   },
   reducers: {
     setView: (state, payload) => {

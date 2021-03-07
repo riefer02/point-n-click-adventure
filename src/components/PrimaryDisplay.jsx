@@ -1,15 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setView, cycleView, cycleViewBack } from "../features/viewSlice";
+import Canvas from "../components/utils/Canvas";
 
 export default function PrimaryDisplay() {
   const dispatch = useDispatch();
   const view = useSelector(({ view }) => view.views[0]);
 
   return (
-    <div className="flex flex-col justify-center mx-auto w-full h-full">
-      <div className="w-full h-40 p-2"></div>
-      <div className="w-full mx-auto text-center">{view} page</div>
+    <div className="flex flex-col justify-between mx-auto w-full h-full">
+      <div className="w-full relative p-2 flex-grow">
+        <Canvas />
+      </div>
+      <div className="w-full mx-auto text-center">{view} area</div>
       <div className="flex justify-center items-center">
         <button
           onClick={() => {

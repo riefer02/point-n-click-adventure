@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import Loader from "./components/utils/Loader";
 import Button from "./components/utils/Button";
 import PrimaryDisplay from "./components/PrimaryDisplay";
@@ -12,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="container h-screen flex flex-col justify-center items-center mx-auto">
-        <div className="bg-indigo-200 w-full h-60">
+        <div className="bg-indigo-200 w-full h-80">
           <PrimaryDisplay />
         </div>
         <div className="w-full">{isLoading && <Loader />}</div>
