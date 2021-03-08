@@ -18,7 +18,7 @@ export default function Canvas() {
     // context.fillRect(10, 10, 150, 100);
 
     context.beginPath();
-    context.moveTo(1275, 250);
+    context.moveTo(1275, 150);
     context.lineTo(1200, 75);
     context.lineTo(100, 25);
     context.fill();
@@ -28,5 +28,5 @@ export default function Canvas() {
     // context.lineTo(1700, 100);
   }, []);
 
-  return <canvas id="canvas" ref={canvasRef} className="bg-red-200"></canvas>;
+  return <canvas id="canvas" ref={canvasRef} className=""></canvas>;
 }

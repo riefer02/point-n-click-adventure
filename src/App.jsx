@@ -10,13 +10,13 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container h-screen flex flex-col justify-center items-center mx-auto">
-        <div className="bg-indigo-200 w-full h-80">
-          <PrimaryDisplay />
-        </div>
-        <div className="w-full">{isLoading && <Loader />}</div>
-        <div className="my-10">
-          <Button />
+      <div className="container flex flex-col justify-center items-center mx-auto">
+        <PrimaryDisplay />
+        <div className="fixed bottom-0 right-5">
+          <div className="w-full">{isLoading && <Loader />}</div>
+          <div className="my-5">
+            <Button />
+          </div>
         </div>
       </div>
     </div>
